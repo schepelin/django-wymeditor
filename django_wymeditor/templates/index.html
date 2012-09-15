@@ -9,15 +9,39 @@
 <body>
     <hgroup>
         <h1>Django wymeditor widget</h1>
-        <p>This is simple widget for Textfield with django cms classes integration</p>
+        <p>This is simple widget for django forms</p>
     </hgroup>
     <h2>Example</h2>
     {{ form.as_p }}
     <h2>Installing</h2>
 
     <h2>Use in django-admin</h2>
+        Just inherit your admin class from RichTextAdmin:
+        from wymeditor.admin import RichTextAdmin
+        <br>
+        <pre>
+        class YourModelAdmin(RichTextAdmin):
+            pass
+        </pre>
+        <br>
+        or as mixin:
+        <br>
+        <pre>
+        class YourModelAdmin(YourCustomAdminClass, RichTextAdmin):
+            pass
+        </pre>
+    <h2>Use in forms</h2>
 
-    <h2>django cms</h2>
+    <pre>
+        from django import forms
+        from wymeditor.widgets import WYMEditor
+
+        class MyForm(forms.Form):
+            my_field = forms.CharField(widget=WYMEditor())
+    </pre>
+
+    <h2>Customization</h2>
+    WYMEditor take argument skin (default='django')
 
 </body>
 </html>
