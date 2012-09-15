@@ -16,8 +16,9 @@ class WYMEditor(Textarea):
             settings.STATIC_URL + 'wymeditor/wymeditor/jquery.wymeditor.js',
         ]
 
-    def __init__(self, attrs=None):
+    def __init__(self, attrs=None, skin='django'):
         self.attrs = {'class': 'wymeditor'}
+        self.skin = skin
         if attrs:
             self.attrs.update(attrs)
         super(WYMEditor, self).__init__(attrs)
@@ -30,6 +31,7 @@ class WYMEditor(Textarea):
         context = {
             'name': name,
             'language': language,
+            'skin': self.skin,
             'STATIC_URL': settings.STATIC_URL,
             'WYM_TOOLS': get_setting('WYM_TOOLS'),
             'WYM_CONTAINERS': get_setting('WYM_CONTAINERS'),

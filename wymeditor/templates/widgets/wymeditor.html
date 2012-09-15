@@ -9,8 +9,8 @@ $(document).ready(function () {
     $('#id_{{ name }}').wymeditor({
         basePath: '{{ STATIC_URL }}wymeditor/wymeditor/',
         lang: '{{ language }}',
-        skin: 'django',
-        skinPath: "{{ STATIC_URL }}wymeditor/wymeditor/skins/django/",
+        skin: '{{ skin }}',
+        skinPath: "{{ STATIC_URL }}wymeditor/wymeditor/skins/{{ skin}}/",
         updateSelector: 'input[type=submit],',
         updateEvent: 'click',
         logoHtml: '',

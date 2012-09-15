@@ -3,6 +3,7 @@
 <head>
     <title>Django wymeditor widget</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}wymeditor/wymeditor/jquery.wymeditor.js"></script>
     <meta charset="utf-8">
 </head>
 <body>
@@ -11,7 +12,7 @@
         <p>This is simple widget for Textfield with django cms classes integration</p>
     </hgroup>
     <h2>Example</h2>
-
+    {{ form.as_p }}
     <h2>Installing</h2>
 
     <h2>Use in django-admin</h2>
@@ -20,3 +21,4 @@
 
 </body>
 </html>
+
