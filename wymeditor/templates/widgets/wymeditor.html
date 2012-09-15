@@ -1,0 +1,40 @@
+<script type="text/javascript">
+//<![CDATA]
+
+$(document).ready(function () {
+    // scroll to top
+    scrollTo(0, 0);
+
+    // init wysiwyg
+    $('#id_{{ name }}').wymeditor({
+        basePath: '{{ STATIC_URL }}wymeditor/wymeditor/',
+        lang: '{{ language }}',
+        skin: 'django',
+        skinPath: "{{ STATIC_URL }}wymeditor/wymeditor/skins/django/",
+        updateSelector: 'input[type=submit],',
+        updateEvent: 'click',
+        logoHtml: '',
+        toolsItems: [
+                {{ WYM_TOOLS }}
+            ],
+        containersItems: [
+                {{ WYM_CONTAINERS }}
+            ],
+        classesItems: [
+                {{ WYM_CLASSES }}
+            ],
+        editorStyles: [
+            {{ WYM_STYLES }}
+            ],
+        {% if WYM_STYLESHEET %}
+        stylesheet:
+            {{ WYM_STYLESHEET }}
+        ,
+        {% endif %}
+    });
+
+});
+
+
+//]]>
+</script>

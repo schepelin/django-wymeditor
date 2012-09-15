@@ -1,0 +1,9 @@
+*.pyc
+.DS_Store
+.idea/*
+media
+delta/static
+local_settings.py
+src/*
+dev.db
+*.sass-cache
