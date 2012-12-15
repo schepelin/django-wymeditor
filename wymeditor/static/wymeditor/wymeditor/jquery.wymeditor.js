@@ -735,7 +735,6 @@ jQuery.extend({
     * jquery.wymeditor.min.js
     * jquery.wymeditor.packed.js
     * jquery.wymeditor.js
-    * /core.js
 */
 WYMeditor.computeWymPath = function () {
     var script = jQuery(
@@ -748,10 +747,7 @@ WYMeditor.computeWymPath = function () {
                 return (
                     s.src.match(
                         /jquery\.wymeditor(\.pack|\.min|\.packed)?\.js(\?.*)?$/
-                    ) ||
-                    s.src.match(
-                            /\/core\.js(\?.*)?$/
-                        )
+                    )
                 );
             }
         )
