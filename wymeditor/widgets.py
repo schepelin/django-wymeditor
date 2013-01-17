@@ -3,16 +3,18 @@ from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.conf import settings
 
+from conf import settings as wym_settings 
+
 def get_setting(setting_name):
-    if hasattr(settings, setting_name):
-        return mark_safe(getattr(settings, setting_name))
+    if hasattr(wym_settings, setting_name):
+        return mark_safe(getattr(wym_settings, setting_name))
     else:
         return ""
 
 class WYMEditor(Textarea):
     class Media:
         js = [
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js',
+            '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js',
             settings.STATIC_URL + 'wymeditor/wymeditor/jquery.wymeditor.js',
         ]
 
