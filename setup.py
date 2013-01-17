@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 setup(
         name = 'django-wymeditor',
         version = __import__('wymeditor').get_version(limit=3),

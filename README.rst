@@ -11,7 +11,7 @@ Features:
  * include RTE widget in admin to models.TextField 
  * Custom settings support for Tools, Containers, Classes and Styles
 
-- Curant WYMeditor version used: 1.0.0b3
+- Current WYMeditor version used: 1.0.0b3
 
 Usage
 *****
@@ -24,7 +24,10 @@ Changelog
 Version 0.1.1
 -------------
 
-version 0.1.0
+- centralised default settings in the app
+- editor control popup Django styled
+
+Version 0.1.0
 -------------
 
 - initial
