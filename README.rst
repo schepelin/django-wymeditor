@@ -21,10 +21,13 @@ Look on the provided 'example' directory to see how using it.
 Changelog
 *********
 
-version 1.0
------------
+Version 0.1.1
+-------------
 
-- init
+version 0.1.0
+-------------
+
+- initial
 
 Authors
 *******
