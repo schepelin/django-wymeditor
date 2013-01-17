@@ -11,12 +11,11 @@ $(document).ready(function () {
         basePath: base_path,
         lang: '{{ language }}',
         skin: '{{ skin }}',
-        skinPath: "{{ STATIC_URL }}wymeditor/wymeditor/skins/{{ skin}}/",
+        skinPath: base_path + 'skins/{{ skin}}/',
         updateSelector: 'input[type=submit],',
         updateEvent: 'click',
         logoHtml: '',
         wymPath: base_path + 'jquery.wymeditor.js',
-        skinPath: base_path + 'skins/django/',
         jQueryPath: '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js',
         dialogHtml: String() +
             '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" ' +
