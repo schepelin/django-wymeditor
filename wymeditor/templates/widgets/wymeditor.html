@@ -5,15 +5,33 @@ $(document).ready(function () {
     // scroll to top
     scrollTo(0, 0);
 
+    var base_path = '{{ STATIC_URL }}wymeditor/wymeditor/';
     // init wysiwyg
     $('#id_{{ name }}').wymeditor({
-        basePath: '{{ STATIC_URL }}wymeditor/wymeditor/',
+        basePath: base_path,
         lang: '{{ language }}',
         skin: '{{ skin }}',
-        skinPath: "{{ STATIC_URL }}wymeditor/wymeditor/skins/{{ skin}}/",
+        skinPath: base_path + 'skins/{{ skin}}/',
         updateSelector: 'input[type=submit],',
         updateEvent: 'click',
         logoHtml: '',
+        wymPath: base_path + 'jquery.wymeditor.js',
+        jQueryPath: '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js',
+        dialogHtml: String() +
+            '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" ' +
+                    '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">' +
+            '<html dir="' + WYMeditor.DIRECTION + '">' +
+                '<head>' +
+                    '<link rel="stylesheet" type="text/css" href="'+window.__admin_media_prefix__+'css/base.css" />' +
+                    '<link rel="stylesheet" type="text/css" href="'+window.__admin_media_prefix__+'css/forms.css" />' +
+                    '<style type="text/css"> .wym_dialog form { padding: 10px; } .wym_dialog fieldset { border: 1px solid #eef; padding: 10px; } .wym_dialog legend { padding: 0 10px; font-size: 14px; font-weight: bold; }</style>' +
+                    '<link rel="stylesheet" type="text/css" media="screen" href="' + WYMeditor.CSS_PATH + '" />' +
+                    '<title>' + WYMeditor.DIALOG_TITLE + '</title>' +
+                    '<script type="text/javascript" src="' + WYMeditor.JQUERY_PATH + '"><\/script>' +
+                    '<script type="text/javascript" src="' + WYMeditor.WYM_PATH + '"><\/script>' +
+                '</head>' +
+                WYMeditor.DIALOG_BODY +
+            '</html>',
         toolsItems: [
                 {{ WYM_TOOLS }}
             ],
