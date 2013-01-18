@@ -1,8 +1,7 @@
 from setuptools import setup
-
 setup(
         name = 'django-wymeditor',
-        version = '0.1',
+        version = __import__('wymeditor').get_version(limit=3),
         author = 'Maxim Schepelin',
         author_email = 'm.schepelin@gmail.com',
         description = 'WYSIWYG editor widget',
